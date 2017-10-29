@@ -2,7 +2,7 @@ import React from 'react'
 import { Fragment, Link } from 'redux-little-router'
 import styled from 'styled-components'
 
-import Counter from 'components/counter.jsx'
+import Polygons from 'components/polygons'
 
 const App = styled.div`
   margin: 30px;
@@ -22,20 +22,12 @@ const ListItem = styled.li`
 export default () =>
   <App>
     <List>
-      <ListItem><Link href="/react-redux-async-await-boilerplate/counter">Async Counter</Link></ListItem>
-      <ListItem><Link href="/react-redux-async-await-boilerplate/foo">Foo</Link></ListItem>
-      <ListItem><Link href="/react-redux-async-await-boilerplate/bar">Bar</Link></ListItem>
+      <ListItem><Link href="/polygons">View One</Link></ListItem>
     </List>
 
     <hr/>
 
-    <Fragment forRoute="/react-redux-async-await-boilerplate/counter">
-      <Counter />
-    </Fragment>
-    <Fragment forRoute="/react-redux-async-await-boilerplate/foo">
-      <p>Just a placeholder</p>
-    </Fragment>
-    <Fragment forRoute="/react-redux-async-await-boilerplate/bar">
-      <p>Some content could go here</p>
+    <Fragment forRoute="/polygons">
+      <Polygons />
     </Fragment>
   </App>
