@@ -8,7 +8,7 @@ const FloorPlanContainer = styled.div`
   justify-content: flex-start;
   align-items: center;
 `
-const RectangleAdder = styled.button`
+const AddRectangleButton = styled.button`
   display: block;
   background-color: white;
   border: 1px solid black;
@@ -23,10 +23,10 @@ class Polygons extends PureComponent {
     // const { count, incrementAsync } = this.props
 
     return (
-      <Div>
+      <div>
         <FloorPlanContainer />
         <AddRectangleButton >Add a Rectangle</AddRectangleButton>
-      </Div>
+      </div>
     )
   }
 }

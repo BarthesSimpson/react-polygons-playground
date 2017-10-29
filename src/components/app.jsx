@@ -22,7 +22,7 @@ const ListItem = styled.li`
 export default () =>
   <App>
     <List>
-      <ListItem><Link href="/polygons">View One</Link></ListItem>
+      <ListItem><Link href="/polygons">Floor Planner</Link></ListItem>
     </List>
 
     <hr/>
@@ -31,3 +31,13 @@ export default () =>
       <Polygons />
     </Fragment>
   </App>
+
+
+/* If we want to do something after initial load:
+import { initializeCurrentLocation } from 'redux-little-router';
+
+// ...after creating your store
+const initialLocation = store.getState().router;
+if (initialLocation) {
+  store.dispatch(initializeCurrentLocation(initialLocation));
+} */

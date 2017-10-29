@@ -6,12 +6,8 @@ import { composeWithDevTools } from 'redux-devtools-extension'
 
 export default function() {
   const routes = {
-    '/react-redux-async-await-boilerplate': {
-      '/counter': {
-        test: 'foo'
-      },
-      '/foo': {},
-      '/bar': {}
+    '/polygons': {
+      title: 'Polygons'
     }
   }
 
