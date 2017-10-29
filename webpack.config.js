@@ -9,19 +9,10 @@ const IS_DEV = process.env.NODE_ENV === 'development'
 const plugins = [
   new Webpack.DefinePlugin({
     'process.env': {
-      'NODE_ENV': IS_DEV ? JSON.stringify('development') : JSON.stringify('production')
+      NODE_ENV: IS_DEV
+        ? JSON.stringify('development')
+        : JSON.stringify('production')
     }
-  }),
-  new ImageminPlugin({
-    disable: true, // change to false to compress images even while webpack is in debug mode
-    pngquant: {
-      quality: '75-90'
-    },
-    gifsicle: {
-      optimizationLevel: 1
-    },
-    svgo: {},
-    plugins: [] // add imagemin-mozjpeg plugin once https://github.com/sindresorhus/execa/issues/61 is available...and prob switch to image-webpack-loader
   })
 ]
 
@@ -48,11 +39,11 @@ if (IS_DEV) {
         dead_code: true,
         evaluate: true,
         if_return: true,
-        join_vars: true,
+        join_vars: true
       },
       output: {
         comments: false
-      },
+      }
     })
   )
 }
@@ -64,26 +55,28 @@ module.exports = {
     filename: 'bundle.js'
   },
   resolve: {
-    modules: [
-      path.resolve(__dirname, 'src'),
-      'node_modules'
-    ],
+    modules: [path.resolve(__dirname, 'src'), 'node_modules'],
     extensions: ['.json', '.js', '.jsx']
   },
   plugins,
   module: {
     rules: [
       {
+        test: /\.(jpe?g|png|gif|svg)$/i,
+        loaders: [
+          'file-loader?hash=sha512&digest=hex&name=[hash].[ext]',
+          'image-webpack-loader'
+        ]
+      },
+      {
         test: /\.jsx?$/,
         exclude: /node_modules/,
         loader: 'babel-loader'
-      }, {
+      },
+      {
         test: /\.css$/,
         exclude: /node_modules/,
-        loaders: [
-          'style-loader',
-          'css-loader'
-        ]
+        loaders: ['style-loader', 'css-loader']
       }
     ]
   },
