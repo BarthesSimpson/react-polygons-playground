@@ -4,34 +4,61 @@ import styled from 'styled-components'
 
 import Polygons from 'components/polygons'
 
-const App = styled.div`
-  margin: 30px;
-`
+import logo from '../img/Target-Logo.jpg'
 
-const List = styled.ul`
+const App = styled.div`
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  background-color: #f3cccd;
+`
+const NavBarTop = styled.div`
+display: flex;
+`
+const Logo = styled.div`
+  background-color: #222;
+  text-align: left;
+  flex: 0.2;
+  padding: 10px;
+  padding-left: 30px;
+`
+const Nav = styled.ul`
+  flex: 0.8;
   list-style-type: none;
   display: flex;
   justify-content: space-around;
-  margin-bottom: 15px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  background-color: #222;
+`
+const ListItem = styled.li`display: inline;`
+
+const NavLink = styled(Link)`
+  color: white;
+  text-decoration: none;
+  &:visited {
+    color: white;
+  }
 `
 
-const ListItem = styled.li`
-  display: inline;
-`
-
-export default () =>
+export default () => (
   <App>
-    <List>
-      <ListItem><Link href="/polygons">Floor Planner</Link></ListItem>
-    </List>
+    <NavBarTop>
+      <Logo>
+        <img src={logo} alt="Target Logo" width={40} height={40} />
+      </Logo>
+      <Nav>
+        <ListItem>
+          <NavLink href="/polygons">Floor Planner</NavLink>
+        </ListItem>
+      </Nav>
+    </NavBarTop>
 
-    <hr/>
+    <hr />
 
     <Fragment forRoute="/polygons">
       <Polygons />
     </Fragment>
   </App>
-
+)
 
 /* If we want to do something after initial load:
 import { initializeCurrentLocation } from 'redux-little-router';
