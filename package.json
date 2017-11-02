@@ -23,6 +23,13 @@
     "moduleDirectories": [
       "node_modules",
       "src"
+    ],
+    "moduleNameMapper": {
+      ".*\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/src/test/mock/fileMock.js",
+      ".*\\.(css|less)$": "identity-obj-proxy"
+    },
+    "setupFiles": [
+      "<rootDir>/src/test/setupTests.js"
     ]
   },
   "keywords": [
@@ -53,14 +60,20 @@
     "babel-preset-stage-2": "^6.16.0",
     "cross-env": "^5.0.5",
     "css-loader": "^0.28.4",
+    "enzyme": "^3.1.0",
+    "enzyme-adapter-react-15": "^1.0.3",
     "eslint": "^3.1.1",
     "eslint-config-standard": "^5.3.5",
     "eslint-plugin-promise": "^2.0.1",
     "eslint-plugin-react": "^5.2.2",
     "eslint-plugin-standard": "^2.0.0",
     "husky": "^0.14.3",
+    "identity-obj-proxy": "^3.0.0",
     "imagemin-webpack-plugin": "^1.2.1",
     "jest": "^17.0.3",
+    "react-test-renderer": "^15.6.1",
+    "redux-mock-store": "^1.3.0",
+    "redux-testkit": "^1.0.6",
     "style-loader": "^0.18.2",
     "webpack": "^2.1.0-beta.27",
     "webpack-dashboard": "^0.2.0",
@@ -71,15 +84,16 @@
     "file-loader": "^1.1.5",
     "image-webpack-loader": "^3.4.2",
     "konva": "^1.7.5",
-    "prop-types": "^15.5.10",
+    "prop-types": "^15.6.1",
     "react": "^15.6.1",
-    "react-dom": "^15.2.1",
+    "react-dom": "^15.6.1",
     "react-json-tree": "^0.10.0",
     "react-konva": "^1.1.5",
     "react-redux": "^4.4.5",
     "redux": "^3.5.2",
     "redux-devtools-extension": "^2.13.2",
     "redux-little-router": "^13.1.3",
+    "redux-thunk": "^2.2.0",
     "styled-components": "^2.2.2"
   }
 }

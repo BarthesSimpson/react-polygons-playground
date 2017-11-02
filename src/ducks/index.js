@@ -1,1 +1,1 @@
-export { default as count } from 'ducks/count'
+export { default as polygon } from './polygon'

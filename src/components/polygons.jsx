@@ -15,7 +15,7 @@ const FloorPlanContainer = styled.div`
 const AddRectangleButton = styled.button`
   display: block;
   color: white;
-  width: 100%;
+  width: 100px;
   background-color: #222;
   border-top: 1px solid #666;
   border-bottom: 1px solid #666;
