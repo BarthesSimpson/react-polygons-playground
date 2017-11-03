@@ -33,6 +33,8 @@ const ListItem = styled.li`display: inline;`
 
 const NavLink = styled(Link)`
   color: white;
+  margin-right: 100px;
+  font-size: 1.5em;
   text-decoration: none;
   &:visited {
     color: white;
@@ -47,14 +49,14 @@ export default () => (
       </Logo>
       <Nav>
         <ListItem>
-          <NavLink href="/polygons">Floor Planner</NavLink>
+          <NavLink href="/">Floor Planner</NavLink>
         </ListItem>
       </Nav>
     </NavBarTop>
 
     <hr />
 
-    <Fragment forRoute="/polygons">
+    <Fragment forRoute="/">
       <Polygons />
     </Fragment>
   </App>

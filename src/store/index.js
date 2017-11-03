@@ -6,7 +6,7 @@ import { composeWithDevTools } from 'redux-devtools-extension'
 
 export default function() {
   const routes = {
-    '/polygons': {
+    '/': {
       title: 'Polygons'
     }
   }

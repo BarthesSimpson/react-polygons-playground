@@ -9,9 +9,7 @@ const ControlsContainer = styled.div`
   width: 100px;
   background-color: #222;
 `
-const FloorPlanContainer = styled.div`
-  flex: 1;
-`
+const FloorPlanContainer = styled.div`flex: 1;`
 const AddRectangleButton = styled.button`
   display: block;
   color: white;
@@ -58,8 +56,14 @@ const Rectangle = () => (
 )
 
 class Polygons extends PureComponent {
+  constructor(props) {
+    super(props)
+    this.state = { width: '0', height: '0' }
+  }
   static propTypes = {}
-
+  componentWillMount() {
+    this.setState({ width: window.innerWidth, height: window.innerHeight })
+  }
   componentDidMount() {
     console.log(this.stageRef.getStage())
   }
@@ -73,8 +77,8 @@ class Polygons extends PureComponent {
         <FloorPlanContainer>
           <Stage
             ref={x => (this.stageRef = x)}
-            width={1080}
-            height={720}
+            width={this.state.width - 100}
+            height={this.state.height - 55}
             style={{ backgroundColor: 'white' }}
           >
             <Rectangle />
