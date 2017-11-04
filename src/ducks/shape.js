@@ -1,11 +1,11 @@
 const initialState = {}
 
-export const upsert = polygon => ({ type: UPSERT, id: polygon.id, polygon })
+export const upsert = shape => ({ type: UPSERT, id: shape.id, shape })
 
 export default function reducer(state = initialState, action) {
   switch (action.type) {
     case UPSERT:
-      return { ...state, [action.id]: action.polygon }
+      return { ...state, [action.id]: action.shape }
     default:
       return state
   }
@@ -16,4 +16,4 @@ export default function reducer(state = initialState, action) {
 //   dispatch(increment())
 // }
 
-const UPSERT = 'update'
+const UPSERT = 'UPSERT'

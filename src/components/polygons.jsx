@@ -2,7 +2,10 @@ import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import styled from 'styled-components'
-import { Stage, Layer, Rect } from 'react-konva'
+
+import AddShapeButton from './AddShapeButton'
+
+import { resize } from '../ducks/grid'
 
 const ViewContainer = styled.div`display: flex;`
 const ControlsContainer = styled.div`
@@ -10,83 +13,48 @@ const ControlsContainer = styled.div`
   background-color: #222;
 `
 const FloorPlanContainer = styled.div`flex: 1;`
-const AddRectangleButton = styled.button`
-  display: block;
-  color: white;
-  width: 100px;
-  background-color: #222;
-  border-top: 1px solid #666;
-  border-bottom: 1px solid #666;
-  padding: 8px;
-`
-
-const Rectangle = () => (
-  <Layer>
-    <Rect
-      x={10}
-      y={10}
-      width={50}
-      height={50}
-      fill={'#CA0815'}
-      shadowBlur={5}
-      draggable="true"
-      dragBoundFunc={pos => {
-        const leftBound = 10
-        const rightBound = 1080 - 60 //this should be stage width minus (rectangle width plus padding)
-        const topBound = 10
-        const bottomBound = 600 - 60
-        const newX =
-          pos.x < leftBound
-            ? leftBound
-            : pos.x > rightBound ? rightBound : pos.x
-        const newY =
-          pos.y < topBound
-            ? topBound
-            : pos.y > bottomBound ? bottomBound : pos.y
-        return {
-          x: newX,
-          y: newY
-        }
-      }}
-      onClick={() => {
-        console.log('yas')
-      }}
-    />
-  </Layer>
-)
 
 class Polygons extends PureComponent {
-  constructor(props) {
-    super(props)
-    this.state = { width: '0', height: '0' }
-  }
+
   static propTypes = {}
+
   componentWillMount() {
-    this.setState({ width: window.innerWidth, height: window.innerHeight })
+    window.addEventListener('resize', () =>
+      this.props.resize({
+        width: window.innerWidth,
+        height: window.innerHeight
+      })
+    )
   }
+
+  componentWillUnmount() {
+    window.removeEventListener('resize')
+  }
+
   componentDidMount() {
-    console.log(this.stageRef.getStage())
+    console.log(this.props)
+    console.log(this.props.width)
   }
 
   render() {
     return (
       <ViewContainer>
         <ControlsContainer>
-          <AddRectangleButton>Add a Rectangle</AddRectangleButton>
+          <AddShapeButton shape="shelf" />
         </ControlsContainer>
         <FloorPlanContainer>
-          <Stage
-            ref={x => (this.stageRef = x)}
-            width={this.state.width - 100}
-            height={this.state.height - 55}
-            style={{ backgroundColor: 'white' }}
-          >
-            <Rectangle />
-          </Stage>
+
         </FloorPlanContainer>
       </ViewContainer>
     )
   }
 }
 
-export default Polygons
+const mapStateToProps = state => ({
+  width: state.grid.width,
+  height: state.grid.height
+})
+const mapDispatchToProps = dispatch => ({
+  resize: ({ width, height }) => dispatch(resize({ width, height }))
+})
+export default connect(mapStateToProps, mapDispatchToProps)(Polygons)

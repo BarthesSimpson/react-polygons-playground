@@ -5,7 +5,7 @@ import { Provider } from 'react-redux'
 import { RouterProvider } from 'redux-little-router'
 
 import initStore from 'store'
-import App from 'components/app.jsx'
+import App from 'components/App.jsx'
 
 const store = initStore()
 

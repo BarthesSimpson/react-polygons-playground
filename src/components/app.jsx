@@ -2,7 +2,7 @@ import React from 'react'
 import { Fragment, Link } from 'redux-little-router'
 import styled from 'styled-components'
 
-import Polygons from 'components/polygons'
+import Polygons from './Polygons'
 
 import logo from '../img/Target-Logo.jpg'
 
