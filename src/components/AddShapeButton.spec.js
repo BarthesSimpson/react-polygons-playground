@@ -1,16 +1,14 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { mount, shallow } from 'enzyme'
-import App from './App'
+import AddShapeButton from './AddShapeButton'
 import TestWrapper from 'test/hoc/testWrapper'
 
-jest.mock('img/Target-Logo.jpg')
-
-describe('App Tests', () => {
+describe('AddShapeButton Tests', () => {
   it('renders without crashing', () => {
     const component = shallow(
       <TestWrapper>
-        <App />
+        <AddShapeButton />
       </TestWrapper>
     )
     expect(component).toBeTruthy()

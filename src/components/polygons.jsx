@@ -4,10 +4,9 @@ import { connect } from 'react-redux'
 import styled from 'styled-components'
 
 import AddShapeButton from './AddShapeButton'
+import Shape from './Shape'
 
 import { resize } from 'ducks/grid'
-
-import { shapeMap } from 'util/shape'
 
 const ViewContainer = styled.div`display: flex;`
 const ControlsContainer = styled.div`
@@ -35,10 +34,11 @@ class Polygons extends PureComponent {
     window.removeEventListener('resize')
   }
 
-  componentDidMount() {
-    console.log(this.props)
-    console.log(this.props.width)
+  componentDidUpdate() {
+        console.log('we re-rendered :(')
   }
+
+  componentDidRe
 
   render() {
     const polygons = this.props.polygons
@@ -52,7 +52,9 @@ class Polygons extends PureComponent {
           height={this.props.height - 55}
           viewBox={'0 0 1000 1000'}
         >
-          {Object.keys(polygons).map(key => shapeMap(polygons[key]))}
+          {Object.keys(polygons).map(key => (
+            <Shape {...polygons[key]} key={key} />
+          ))}
         </FloorPlanContainer>
       </ViewContainer>
     )
