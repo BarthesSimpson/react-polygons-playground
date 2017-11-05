@@ -14,7 +14,7 @@ describe('Resize grid tests', () => {
   it('Resizes the grid correctly', () => {
     const action = resize({ height: 9, width: 12 })
     const result = { height: 9, width: 12 }
-    Reducer(polygonReducer)
+    Reducer(gridReducer)
       .withState({})
       .expect(action)
       .toReturnState(result)

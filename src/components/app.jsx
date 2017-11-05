@@ -4,7 +4,7 @@ import styled from 'styled-components'
 
 import Polygons from './Polygons'
 
-import logo from '../img/Target-Logo.jpg'
+import logo from 'img/Target-Logo.jpg'
 
 const App = styled.div`
   font-family: Helvetica Neue, Helvetica, Arial, sans-serif;

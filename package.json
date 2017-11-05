@@ -1,23 +1,24 @@
 {
-  "name": "react-redux-async-await-boilerplate",
-  "version": "0.0.3",
+  "name": "polygon-playground",
+  "version": "0.0.1",
   "description": "A boilerplate frontend repo that uses react, redux, redux-thunk, async/await, styled-components, webpack and babel and makes as few other assumptions as possible",
   "main": "webpack.config.js",
-  "author": "Matt Granmoe",
+  "author": "David Frenk",
   "license": "MIT",
-  "homepage": "https://github.com/granmoe/react-redux-async-await-boilerplate",
+  "homepage": "https://github.com/BarthesSimpson/react-polygons-playground",
   "repository": {
     "type": "git",
-    "url": "https://github.com/granmoe/react-redux-async-await-boilerplate.git"
+    "url": "https://github.com/BarthesSimpson/react-polygons-playground"
   },
   "bugs": {
-    "url": "https://github.com/granmoe/react-redux-async-await-boilerplate/issues"
+    "url": "https://github.com/BarthesSimpson/react-polygons-playground/issues"
   },
   "scripts": {
     "start": "cross-env NODE_ENV=development BABEL_ENV=development ./node_modules/webpack-dev-server/bin/webpack-dev-server.js",
     "start:dash": "cross-env NODE_ENV=development BABEL_ENV=development webpack-dashboard -- ./node_modules/webpack-dev-server/bin/webpack-dev-server.js",
     "build": "cross-env NODE_ENV=production BABEL_ENV=production webpack",
-    "test": "NODE_ENV=test jest --verbose"
+    "test": "NODE_ENV=test jest --verbose",
+    "test:watch": "NODE_ENV=test jest --verbose --watch"
   },
   "jest": {
     "moduleDirectories": [
@@ -84,7 +85,7 @@
     "file-loader": "^1.1.5",
     "image-webpack-loader": "^3.4.2",
     "konva": "^1.7.5",
-    "prop-types": "^15.6.1",
+    "prop-types": "^15.6.0",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
     "react-json-tree": "^0.10.0",
