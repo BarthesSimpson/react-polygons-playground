@@ -5,17 +5,21 @@ import styled from 'styled-components'
 
 import AddShapeButton from './AddShapeButton'
 
-import { resize } from '../ducks/grid'
+import { resize } from 'ducks/grid'
+
+import { shapeMap } from 'util/shape'
 
 const ViewContainer = styled.div`display: flex;`
 const ControlsContainer = styled.div`
   width: 100px;
   background-color: #222;
 `
-const FloorPlanContainer = styled.div`flex: 1;`
+const FloorPlanContainer = styled.svg`
+  flex: 1;
+  border: 1px solid black;
+`
 
 class Polygons extends PureComponent {
-
   static propTypes = {}
 
   componentWillMount() {
@@ -37,13 +41,18 @@ class Polygons extends PureComponent {
   }
 
   render() {
+    const polygons = this.props.polygons
     return (
       <ViewContainer>
         <ControlsContainer>
           <AddShapeButton shape="shelf" />
         </ControlsContainer>
-        <FloorPlanContainer>
-
+        <FloorPlanContainer
+          width={this.props.width - 100}
+          height={this.props.height - 55}
+          viewBox={'0 0 1000 1000'}
+        >
+          {Object.keys(polygons).map(key => shapeMap(polygons[key]))}
         </FloorPlanContainer>
       </ViewContainer>
     )
@@ -52,7 +61,8 @@ class Polygons extends PureComponent {
 
 const mapStateToProps = state => ({
   width: state.grid.width,
-  height: state.grid.height
+  height: state.grid.height,
+  polygons: state.shape
 })
 const mapDispatchToProps = dispatch => ({
   resize: ({ width, height }) => dispatch(resize({ width, height }))
