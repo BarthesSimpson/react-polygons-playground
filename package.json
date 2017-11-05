@@ -14,43 +14,24 @@
     "url": "https://github.com/BarthesSimpson/react-polygons-playground/issues"
   },
   "scripts": {
-    "start": "cross-env NODE_ENV=development BABEL_ENV=development ./node_modules/webpack-dev-server/bin/webpack-dev-server.js",
-    "start:dash": "cross-env NODE_ENV=development BABEL_ENV=development webpack-dashboard -- ./node_modules/webpack-dev-server/bin/webpack-dev-server.js",
+    "start":
+      "cross-env NODE_ENV=development BABEL_ENV=development ./node_modules/webpack-dev-server/bin/webpack-dev-server.js",
+    "start:dash":
+      "cross-env NODE_ENV=development BABEL_ENV=development webpack-dashboard -- ./node_modules/webpack-dev-server/bin/webpack-dev-server.js",
     "build": "cross-env NODE_ENV=production BABEL_ENV=production webpack",
     "test": "NODE_ENV=test jest --verbose",
     "test:watch": "NODE_ENV=test jest --verbose --watch"
   },
   "jest": {
-    "moduleDirectories": [
-      "node_modules",
-      "src"
-    ],
+    "moduleDirectories": ["node_modules", "src"],
     "moduleNameMapper": {
-      ".*\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/src/test/mock/fileMock.js",
+      ".*\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$":
+        "<rootDir>/src/test/mock/fileMock.js",
       ".*\\.(css|less)$": "identity-obj-proxy"
     },
-    "setupFiles": [
-      "<rootDir>/src/test/setupTests.js"
-    ]
+    "setupFiles": ["<rootDir>/src/test/setupTests.js"]
   },
-  "keywords": [
-    "react",
-    "redux",
-    "redux-thunk",
-    "redux-little-router",
-    "async-await",
-    "webpack",
-    "webpack 2",
-    "babel",
-    "es6",
-    "es7",
-    "styled-components",
-    "boilerplate",
-    "template",
-    "eslint",
-    "jest",
-    "tests"
-  ],
+  "keywords": ["react", "redux", "svg"],
   "devDependencies": {
     "babel-eslint": "^6.1.2",
     "babel-loader": "^6.2.5",
@@ -84,13 +65,11 @@
   "dependencies": {
     "file-loader": "^1.1.5",
     "image-webpack-loader": "^3.4.2",
-    "konva": "^1.7.5",
     "prop-types": "^15.6.0",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
     "react-draggable": "^3.0.3",
     "react-json-tree": "^0.10.0",
-    "react-konva": "^1.1.5",
     "react-redux": "^4.4.5",
     "redux": "^3.5.2",
     "redux-devtools-extension": "^2.13.2",
