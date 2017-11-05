@@ -1,6 +1,6 @@
 # Polygon Playground
 
-Trying out some declarative polygon manipulation within a flux architecture
+Trying out some declarative SVG polygon manipulation within a flux architecture
 
 ## Redux Store
 
