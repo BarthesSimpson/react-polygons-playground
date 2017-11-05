@@ -1,7 +1,7 @@
 {
   "name": "polygon-playground",
   "version": "0.0.1",
-  "description": "A boilerplate frontend repo that uses react, redux, redux-thunk, async/await, styled-components, webpack and babel and makes as few other assumptions as possible",
+  "description": "Experiment with svg layout designer in React",
   "main": "webpack.config.js",
   "author": "David Frenk",
   "license": "MIT",
