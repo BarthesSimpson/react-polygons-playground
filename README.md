@@ -20,19 +20,21 @@ Trying out some declarative polygon manipulation within a flux architecture
 
   - The main canvas where everything takes place
 
-### shelf
+### shapes
+
+#### shelf
 
   - A generic rectangular shelving unit
 
-### carts
+#### carts
 
   - A region where customers can pick up and return carts
 
-### checkout
+#### checkout
 
   - A single checkout counter
 
-### food
+#### food
 
   - A circular area where prepared food is sold
 
