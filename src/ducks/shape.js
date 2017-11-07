@@ -1,6 +1,8 @@
 const initialState = {}
 
 export const upsert = shape => ({ type: UPSERT, id: shape.id, shape })
+export const drag = shape => ({ type: DRAG, shape })
+export const dragEnd = shape => ({ type: DRAGEND, shape })
 
 export default function reducer(state = initialState, action) {
   switch (action.type) {
@@ -17,3 +19,5 @@ export default function reducer(state = initialState, action) {
 // }
 
 const UPSERT = 'UPSERT'
+const DRAG = 'DRAG'
+const DRAGEND = 'DRAGEND'

@@ -2785,7 +2785,7 @@ fb-watchman@^1.8.0, fb-watchman@^1.9.0:
   dependencies:
     bser "1.0.2"
 
-fbjs@^0.8.14, fbjs@^0.8.16, fbjs@^0.8.5, fbjs@^0.8.9:
+fbjs@^0.8.16, fbjs@^0.8.5, fbjs@^0.8.9:
   version "0.8.16"
   resolved "https://registry.yarnpkg.com/fbjs/-/fbjs-0.8.16.tgz#5e67432f550dc41b572bf55847b8aca64e5337db"
   dependencies:
@@ -4403,10 +4403,6 @@ kind-of@^4.0.0:
   dependencies:
     is-buffer "^1.1.5"
 
-konva@^1.7.5:
-  version "1.7.5"
-  resolved "https://registry.yarnpkg.com/konva/-/konva-1.7.5.tgz#f64ca1b61db3819872ee2f917c670974336ce3d4"
-
 lazy-cache@^1.0.3:
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/lazy-cache/-/lazy-cache-1.0.4.tgz#a1d78fc3a50474cb80845d3b3b6e1da49a446e8e"
@@ -5925,15 +5921,6 @@ react-json-tree@^0.10.0:
     babel-runtime "^6.6.1"
     prop-types "^15.5.8"
     react-base16-styling "^0.5.1"
-
-react-konva@^1.1.5:
-  version "1.1.5"
-  resolved "https://registry.yarnpkg.com/react-konva/-/react-konva-1.1.5.tgz#3464e22991e29838bcece1ebb897e70537a581d1"
-  dependencies:
-    create-react-class "^15.6.0"
-    fbjs "^0.8.14"
-    object-assign "^4.1.1"
-    prop-types "^15.5.10"
 
 react-proxy@^1.1.7:
   version "1.1.8"

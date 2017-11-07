@@ -1,6 +1,6 @@
 # Polygon Playground
 
-Trying out some declarative SVG polygon manipulation within a flux architecture
+Trying out some declarative SVG polygon manipulation within a flux architecture. I stress-tested this implementation, and performance begins to drop at around 12,000 SVG elements.
 
 ## Redux Store
 
@@ -11,8 +11,7 @@ Trying out some declarative SVG polygon manipulation within a flux architecture
   - Stores a hashmap of all the polygons in the layout with their attributes and positions
 
 ### draft
-  - Enables undo and redo functionality by caching some number of previous polygon states
-  - Could be made more memory efficient by just storing the diffs, but good enough for now
+  - Enables undo and redo functionality by caching the diff each time a change is made to the floorplan
 
 ## React Components
 

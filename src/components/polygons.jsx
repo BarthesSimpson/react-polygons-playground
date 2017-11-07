@@ -35,10 +35,8 @@ class Polygons extends PureComponent {
   }
 
   componentDidUpdate() {
-        console.log('we re-rendered :(')
+        // console.log('we re-rendered :(')
   }
-
-  componentDidRe
 
   render() {
     const polygons = this.props.polygons
@@ -46,6 +44,7 @@ class Polygons extends PureComponent {
       <ViewContainer>
         <ControlsContainer>
           <AddShapeButton shape="shelf" />
+          <AddShapeButton shape="checkout" />
         </ControlsContainer>
         <FloorPlanContainer
           width={this.props.width - 100}
@@ -64,7 +63,8 @@ class Polygons extends PureComponent {
 const mapStateToProps = state => ({
   width: state.grid.width,
   height: state.grid.height,
-  polygons: state.shape
+  isDraggins: state.grid.isDragging,
+  polygons: state.shape,
 })
 const mapDispatchToProps = dispatch => ({
   resize: ({ width, height }) => dispatch(resize({ width, height }))

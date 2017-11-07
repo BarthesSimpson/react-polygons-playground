@@ -5,6 +5,7 @@ import thunk from 'redux-thunk'
 
 //actions
 import { resize } from './grid'
+import { drag, dragEnd } from './shape'
 
 //reducer
 import { initialState } from './grid'
@@ -18,5 +19,17 @@ describe('Resize grid tests', () => {
       .withState({})
       .expect(action)
       .toReturnState(result)
+  })
+  it('Toggles dragState correctly', () => {
+    const dragAction = drag({ id: 123 })
+    const dragEndAction = dragEnd({ id: 123 })
+    Reducer(gridReducer)
+      .withState({ isDragging: null })
+      .expect(dragAction)
+      .toReturnState({ isDragging: 123 })
+    Reducer(gridReducer)
+      .withState({ isDragging: 123 })
+      .expect(dragEndAction)
+      .toReturnState({ isDragging: null })
   })
 })

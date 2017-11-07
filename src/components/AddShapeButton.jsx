@@ -17,9 +17,14 @@ const NiceButton = styled.button`
   padding: 8px;
 `
 
-const AddShapeButton = ({ shape, addShape }) => (
+const AddShapeButton = ({ shape, addShape }) => {
+  // for(let i = 0; i < 7500; i++) {
+  //   addShape()
+  // }
+ return (
   <NiceButton onClick={addShape}>Add {shape}</NiceButton>
 )
+}
 
 AddShapeButton.propTypes = {
   shape: PropTypes.string.isRequired
