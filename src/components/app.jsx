@@ -27,6 +27,7 @@ const Nav = styled.ul`
   justify-content: space-around;
   padding-top: 15px;
   padding-bottom: 15px;
+  padding-right: 80px;
   background-color: #222;
 `
 const ListItem = styled.li`display: inline;`

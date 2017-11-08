@@ -8,7 +8,13 @@ import Shape from './Shape'
 
 import { resize } from 'ducks/grid'
 
-const ViewContainer = styled.div`display: flex;`
+import colors from 'constants/colors'
+
+const ViewContainer = styled.div`
+  display: flex;
+  /* background-color: ${props =>
+    props.isDragging ? colors.complementaryGreen : 'initial'}; */
+`
 const ControlsContainer = styled.div`
   width: 100px;
   background-color: #222;
@@ -35,13 +41,13 @@ class Polygons extends PureComponent {
   }
 
   componentDidUpdate() {
-        // console.log('we re-rendered :(')
+    // console.log('we re-rendered :(')
   }
 
   render() {
-    const polygons = this.props.polygons
+    const { polygons, isDragging } = this.props
     return (
-      <ViewContainer>
+      <ViewContainer isDragging={isDragging}>
         <ControlsContainer>
           <AddShapeButton shape="shelf" />
           <AddShapeButton shape="checkout" />
@@ -63,8 +69,8 @@ class Polygons extends PureComponent {
 const mapStateToProps = state => ({
   width: state.grid.width,
   height: state.grid.height,
-  isDraggins: state.grid.isDragging,
-  polygons: state.shape,
+  isDragging: state.grid.isDragging,
+  polygons: state.shape
 })
 const mapDispatchToProps = dispatch => ({
   resize: ({ width, height }) => dispatch(resize({ width, height }))

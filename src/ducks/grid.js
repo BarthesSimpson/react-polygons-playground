@@ -11,7 +11,7 @@ export default function reducer(state = initialState, action) {
     case RESIZE:
       return { ...state, width: action.width, height: action.height }
     case DRAG:
-      return { ...state, isDragging: action.shape.id }
+      return { ...state, isDragging: action.shape }
     case DRAGEND:
       return { ...state, isDragging: null }
     default:

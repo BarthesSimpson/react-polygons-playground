@@ -9,13 +9,21 @@ export const rules = {
   }
 }
 
+// export const calculateBorders = (shapeType, collisionType) => {
+//   const margins = rules[shapeType][collisionType]
+//   return {
+//     border: margins.x + 'px',
+//     borderTop: margins.y + 'px',
+//     borderBottom: margins.y + 'px'
+//   }
+// }
+
 export const addMarginsToShape = (shape, collidesWith) => {
   const margins = rules[shape.type][collidesWith]
   return {
-    ...shape,
-    x: shape.x - margins[x],
-    y: shape.y - margins[y],
-    w: shape.w + margins[x],
-    h: shape.h + margins[y]
+    x: shape.x - margins.x,
+    y: shape.y - margins.y,
+    width: shape.width + 2 * margins.x,
+    height: shape.height + 2 * margins.y
   }
 }
